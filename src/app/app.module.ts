@@ -7,11 +7,10 @@ import { LoginComponent } from './components/login/login.component';
 import { MovieDisplayComponent } from './components/movie-display/movie-display.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { RegisterComponent } from './components/register/register.component';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-//import {MatInputModule, MatButtonModule} from '@angular/material';
-import {FormsModule} from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +26,10 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    //MatInputModule,
-    //MatButtonModule
-    FormsModule
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

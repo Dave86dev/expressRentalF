@@ -1,1 +1,9 @@
-<p>movie-display works!</p>
+ 
+<div class="movies">
+    <div class="movie" *ngFor="let film of movieService.getFilms()">
+       <h2>{{film.title}}</h2> 
+        <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
+        alt="poster">
+    </div>
+</div>
+
