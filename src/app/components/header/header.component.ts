@@ -7,7 +7,7 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  isSearchActive: boolean = false;
   films: Object;
   constructor(private movieService:MovieService) { }
 
@@ -16,12 +16,24 @@ export class HeaderComponent implements OnInit {
   }
 
   searchMovie(event){
+
+    if(event.target.value.length == 0 && this.isSearchActive){
+      this.movieService.getDisplayMovies()
+      .subscribe(
+      
+      res=> this.movieService.setFilms(res),
+      error=>console.log(error)
+
+    )
+    }
     
     if(event.target.value.length >= 3){
-      
+      this.isSearchActive = true;
       this.movieService.getTitleMovies(event.target.value)
       .subscribe(res=>this.movieService.setFilms(res))
     }
+
+
 
   }
 

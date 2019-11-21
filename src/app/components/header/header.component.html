@@ -2,7 +2,7 @@
     <nav class="navigation">
       <a routerLink="/display"
       routerLinkActive="active-link">
-        <span>eRental</span>
+        expRENTAL
       </a>
       <a routerLink="/movies/top_rated"
       routerLinkActive="active-link">
@@ -11,9 +11,11 @@
      <a routerLink="/login" routerLinkActive="active-link">
         <span>Login</span>
       </a>
+      <div class="listsearch">
       <input type="text" name="" id="" (keyup)="searchMovie($event)">
       <i class="material-icons">
         search
       </i>
+      </div>
     </nav>
   </header>
