@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MovieGenreDisplayComponent } from './components/movie-genre-display/movie-genre-display.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     MovieDisplayComponent,
     MovieDetailComponent,
-    RegisterComponent
+    RegisterComponent,
+    MovieGenreDisplayComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

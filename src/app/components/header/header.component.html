@@ -4,18 +4,17 @@
       routerLinkActive="active-link">
         expRENTAL
       </a>
-      <a routerLink="/movies/top_rated"
-      routerLinkActive="active-link">
-        <span>Top Rated</span>
-      </a>
+      <div class="genreSearch">
+        <input type="text" name="" id="" (keyup)="searchMovieGenre($event)">
+        <i class="material-icons">
+          search
+        </i>
+        </div>
      <a routerLink="/login" routerLinkActive="active-link">
         <span>Login</span>
       </a>
-      <div class="listsearch">
+      
       <input type="text" name="" id="" (keyup)="searchMovie($event)">
-      <i class="material-icons">
-        search
-      </i>
-      </div>
+      
     </nav>
   </header>

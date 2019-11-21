@@ -1,0 +1,8 @@
+ 
+<div class="movies">
+    <div class="movie" *ngFor="let filmGenre of movieService.getFilmsGenre()">
+       <!-- <h2>{{filmGenre.title}}</h2>  -->
+        <img src="https://image.tmdb.org/t/p/w200/{{filmGenre.poster_path}}" 
+        alt="poster">
+    </div>
+</div>

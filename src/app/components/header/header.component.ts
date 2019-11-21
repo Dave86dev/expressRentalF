@@ -37,4 +37,14 @@ export class HeaderComponent implements OnInit {
 
   }
 
+
+  searchMovieGenre(event){
+    if(event.keyCode == 13){
+      console.log("aaaaa");
+      this.movieService.getGenreMovies(event.target.value)
+      .subscribe(res=>this.movieService.setFilmsGenre(res));
+    }
+    
+  }
+
 }
