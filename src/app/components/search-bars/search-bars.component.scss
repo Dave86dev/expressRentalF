@@ -1,0 +1,43 @@
+
+
+.seekers{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.genreseek{
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+.titleseek{ 
+    margin-left: 55px;
+    margin-right: 90px;
+    margin-top: 20px;
+}
+
+::placeholder {
+    color: white;
+    font-style: italic;
+    
+}
+
+a:hover{
+opacity: 1;
+}
+
+.find{
+    all:unset;
+    border-bottom: 2px solid rgb(0, 168, 155);
+    color: white;
+    
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.find:focus{
+    opacity: 1;
+}

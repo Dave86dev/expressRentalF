@@ -1,0 +1,19 @@
+
+  <div class="seekers">
+      <!-- <div class="genreseek">
+          <input type="text" class="find" name="" id="" placeholder="desplegable" (keyup)="searchMovieGenre($event)">
+      </div> -->
+      <mat-select [(value)]="selected">
+        <mat-option>None</mat-option>
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2">Option 2</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+      <div class="titleseek">
+        <input type="text" class="find" name="" id="" placeholder="Title Search" 
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Title Search'" (keyup)="searchMovie($event)">
+        
+       
+      </div>
+  </div>
+

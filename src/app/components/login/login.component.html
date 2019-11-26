@@ -1,3 +1,37 @@
-<a routerLink="/register" routerLinkActive="active-link">
-    <span>Register</span>
-  </a>
+<div class="loginmain">
+  <div class="loginmainChild">
+    <div class="blank"></div>
+    <div class="loginLogo">
+        user login
+    </div>
+    <div class="blank"></div>
+    
+    <div class="emaildiv">
+        <mat-form-field>
+            <input class="inputLogin" matInput placeholder="e-mail address"
+            [(ngModel)] = "userLogin.email" [ngModelOptions] = "{standalone: true }">
+        </mat-form-field>
+    </div>
+    <div class="blank"></div>
+    
+    <div class="passdiv">
+        <mat-form-field>
+            <input class="inputLogin" matInput placeholder="password" [type]="hide ? 'password' : 'text'" 
+            [(ngModel)] = "userLogin.password" [ngModelOptions] = "{standalone: true }">
+
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+    </div>
+    <div class="blank"></div>
+    <div class="submitCont">
+        <button (click)="sendLogin()" mat-button>Sign in</button>
+    </div>
+  </div>
+  
+</div>
+<div class="errorCage">
+  {{errorMsg}}
+</div>

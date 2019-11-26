@@ -13,6 +13,9 @@ import { MatInputModule, MatButtonModule, MatIconModule } from '@angular/materia
 import { FormsModule } from '@angular/forms';
 import { MovieGenreDisplayComponent } from './components/movie-genre-display/movie-genre-display.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SearchBarsComponent } from './components/search-bars/search-bars.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MovieDetailComponent,
     RegisterComponent,
     MovieGenreDisplayComponent,
-    FooterComponent
+    FooterComponent,
+    SearchBarsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,20 +1,35 @@
 <header>
-    <nav class="navigation">
-      <a routerLink="/display"
-      routerLinkActive="active-link">
-        expRENTAL
+  <div class="navegador">
+
+    <div class="logocont">
+      <a class="explogo" routerLink="/display" routerLinkActive="active-link">
+        <img draggable="false" src="../../../assets/img/logo.png">
       </a>
-      <div class="genreSearch">
-        <input type="text" name="" id="" (keyup)="searchMovieGenre($event)">
-        <i class="material-icons">
-          search
-        </i>
+    </div>
+
+    <div class="logincont">
+      <div class="loginreg" *ngIf="userService.isLoginReg">
+        <div class="loginclass"><a routerLink="/login" routerLinkActive="active-link">
+            login
+          </a>
         </div>
-     <a routerLink="/login" routerLinkActive="active-link">
-        <button (click)="pruebaAPI()">Login</button>>
-      </a>
-      
-      <input type="text" name="" id="" (keyup)="searchMovie($event)">
-      
-    </nav>
-  </header>
+        <div class="registerclass"><a routerLink="/register" routerLinkActive="active-link">
+            register
+          </a>
+        </div>
+      </div>
+      <div class="proflogout" *ngIf="userService.isProfOut">
+        <div class="loginclass"><a routerLink="/profile" routerLinkActive="active-link">
+            profile
+          </a>
+        </div>
+        <div class="registerclass"><a routerLink="/display" routerLinkActive="active-link" (click)="userService.logoutUser()">
+            log out
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</header>

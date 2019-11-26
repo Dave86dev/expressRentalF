@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -7,29 +9,50 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // user:User={
-  //   username:'',
-  //   password:''
-  // };
+  //login_b: Object;
+  userLogin = {
+    email: '',
+    password: ''
+  };
+  errorMsg = "";
+  hide= true;
   res:object;
   constructor(
-    private userService: UserService) { }
-
-  // login(){
-  //   this.userService.login(this.user)
-  //   .subscribe(res=>{
-  //     this.res=res;
-  //     this.userService
-  //     .setUser(res['user'])
-  //     setTimeout(() => {
-  //       this.router.navigate(['/discover'])
-  //     }, 2500);
-  //   },
-  //   error=>this.res=error.error)
-  // }
-
+    private userService: UserService, private router:Router) { }
 
   ngOnInit() {
   }
 
+  sendLogin(){
+    
+    this.userService.loginUser(this.userLogin)
+    .subscribe(
+      
+      (res) => { 
+
+        if(res.name){
+          localStorage.setItem("datosLogin", JSON.stringify(res));
+
+          var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
+        
+          this.errorMsg = "Welcombe back , " + dataLogin["name"];
+          console.log(dataLogin["token"]);
+
+        setTimeout(() => {
+          this.userService.isLoginReg = false;
+          this.userService.isProfOut = true;
+          this.router.navigate(['/display'])
+        }, 2500);
+        }else{
+          this.errorMsg = res.message;
+        }
+      },
+      error=>console.log(error)
+
+    )
+  }
+
 }
+
+
+

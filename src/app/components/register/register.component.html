@@ -1,1 +1,46 @@
-<p>register works!</p>
+<div class="registermain">
+  <div class="registermainChild">
+    <div class="blank"></div>
+    <div class="registerLogo">
+      register
+    </div>
+    <!-- <div class="blank"></div> -->
+
+    <div class="regdiv">
+      <mat-form-field>
+        <input class="inputregister" matInput placeholder="username">
+      </mat-form-field>
+    </div>
+    <div class="regdiv">
+      <mat-form-field>
+        <input class="inputregister" matInput placeholder="e-mail">
+      </mat-form-field>
+    </div>
+    <div class="regdiv">
+      <mat-form-field>
+        <input class="inputregister" matInput placeholder="phone number">
+      </mat-form-field>
+    </div>
+    <div class="regdiv">
+      <mat-form-field>
+        <input class="inputregister" matInput placeholder="billcard number">
+      </mat-form-field>
+    </div>
+    <!-- <div class="blank"></div> -->
+
+    <div class="regdiv">
+      <mat-form-field>
+        <input class="inputregister" matInput placeholder="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="blank"></div>
+    <div class="submitCont">
+      <button mat-button>Register Submit</button>
+    </div>
+  </div>
+</div>
+
