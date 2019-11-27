@@ -1,9 +1,10 @@
-<app-search-bars></app-search-bars> 
-<div class="movies">
-    <div class="movie" *ngFor="let film of movieService.getFilms()">
-       <!-- <h2>{{film.title}}</h2>  -->
-        <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
-        alt="poster">
+<app-search-bars></app-search-bars>
+<div class="title">Popular Films</div> 
+    <div class="scrolling-wrapper-flexbox">
+        <div class="card" *ngFor="let film of movieService.getFilms()">
+            <img class="posterclass" width="200" height="288" 
+            src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
+            alt="poster">
+        </div>
     </div>
-</div>
 <app-movie-genre-display></app-movie-genre-display>

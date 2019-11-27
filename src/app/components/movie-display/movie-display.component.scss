@@ -1,37 +1,42 @@
 
-
-.movies{
-    
+.scrolling-wrapper-flexbox {
     display: flex;
-    color: black;
-    flex-wrap: wrap;
-    justify-content: center;
-    //width: fit-content;
-    align-items: center;
-    
+    flex-wrap: nowrap;
+    overflow-x: auto;
 
     
-    .movie{
-        
-        display: flex;
-        flex-direction: row;
-        //align-items: center;
-        justify-content: center;
-        margin: 0.1rem;
-        padding: 2.5rem;
-        
-        h2{
-            font-size: 1rem;
-        }
-        img{
-            border-radius:0.2rem;
-            width: 175px;
-        }
+    flex-direction: row;
+    align-items: flex-start;
+    
+    width: auto;
+  
+    .card {
+      flex: 0 0 auto;
+
+      pointer-events: none;
+   
+      // width: 100vw;
+      // height: 100vh;
+      // margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+  }
+
+  .scrolling-wrapper-flexbox {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .title{
+    width: 100%;
+    margin-top:16px;
+    color: rgb(0, 168, 155);
+    font-style: italic;
+    font-size: 18px;
 }
-
-
-
 
 .seekers{
     height: 20px;
@@ -71,3 +76,7 @@ opacity: 1;
 .find:focus{
     opacity: 1;
 }
+
+
+
+
