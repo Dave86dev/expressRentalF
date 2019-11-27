@@ -32,18 +32,32 @@ export class UserService {
   logoutUser():Observable<any>{
     
     let tokenLog = JSON.parse(localStorage.getItem("datosLogin"));
-    console.log(tokenLog.token);
+    
 
     this.isLoginReg = true;
     this.isProfOut = false;
     
     this.httpClient.get(`http://localhost:3000/user/logout/` + tokenLog.token).subscribe();
+
+    localStorage.removeItem("datosLogin");
+
     return;
   }
 
-
-  regUser(regis_d:any):Observable<any>{
+ regUser(regis_d:any):Observable<any>{
     
     return this.httpClient.post(`http://localhost:3000/user/register`, regis_d);
+  }
+
+  showCuser(user_p:any):Observable<any>{
+    return this.httpClient.post(`http://localhost:3000/user/showme`, user_p);
+  }
+
+  loginDone(){
+
+    if(localStorage.getItem('datosLogin')){
+      return true;
+    }
+    return false;
   }
 }

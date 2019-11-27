@@ -17,7 +17,7 @@ export class MovieService {
 
    getDisplayMovies():Observable<any>{
       
-      return this.httpClient.get(this.url + `popular/60`);
+      return this.httpClient.get(this.url + `popular/75`);
       
    }
 

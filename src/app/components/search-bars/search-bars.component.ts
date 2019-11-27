@@ -44,7 +44,7 @@ export class SearchBarsComponent implements OnInit {
 
   searchMovieGenre(){
     
-      console.log(this.selected);
+      //console.log(this.selected);
       this.movieService.getGenreMovies(this.selected)
       .subscribe(res=>this.movieService.setFilmsGenre(res));
     

@@ -39,8 +39,10 @@ export class LoginComponent implements OnInit {
           console.log(dataLogin["token"]);
 
         setTimeout(() => {
-          this.userService.isLoginReg = false;
-          this.userService.isProfOut = true;
+          // this.userService.isLoginReg = false;
+          // this.userService.isProfOut = true;
+          this.userService.loginDone();
+          
           this.router.navigate(['/display'])
         }, 2500);
         }else{

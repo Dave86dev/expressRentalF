@@ -11,14 +11,8 @@
 
   .card2 {
     flex: 0 0 auto;
-
     pointer-events: none;
- 
-    // width: 100vw;
-    // height: 100vh;
-    // margin: 0;
-    // width: 200px;
-    // height: 288px;
+    margin: 0.3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +27,7 @@
 
 .title{
   width: 100%;
-  margin-top:16px;
+  margin-top:18px;
   color: rgb(0, 168, 155);
   font-style: italic; 
   font-size: 18px;
