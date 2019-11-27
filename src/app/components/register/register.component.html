@@ -8,39 +8,46 @@
 
     <div class="regdiv">
       <mat-form-field>
-        <input class="inputregister" matInput placeholder="username">
+        <input class="inputregister" matInput placeholder="username"
+        [(ngModel)] = "userRegist.username" [ngModelOptions] = "{standalone: true }">
       </mat-form-field>
     </div>
     <div class="regdiv">
       <mat-form-field>
-        <input class="inputregister" matInput placeholder="e-mail">
+        <input class="inputregister" matInput placeholder="e-mail"
+        [(ngModel)] = "userRegist.email" [ngModelOptions] = "{standalone: true }">
       </mat-form-field>
     </div>
     <div class="regdiv">
       <mat-form-field>
-        <input class="inputregister" matInput placeholder="phone number">
+        <input class="inputregister" matInput placeholder="phone number"
+        [(ngModel)] = "userRegist.phone" [ngModelOptions] = "{standalone: true }">
       </mat-form-field>
     </div>
     <div class="regdiv">
       <mat-form-field>
-        <input class="inputregister" matInput placeholder="billcard number">
+        <input class="inputregister" matInput placeholder="billcard number"
+        [(ngModel)] = "userRegist.billcard" [ngModelOptions] = "{standalone: true }">
       </mat-form-field>
     </div>
     <!-- <div class="blank"></div> -->
 
     <div class="regdiv">
       <mat-form-field>
-        <input class="inputregister" matInput placeholder="password" [type]="hide ? 'password' : 'text'">
+        <input class="inputregister" matInput placeholder="password" [type]="hide ? 'password' : 'text'"
+        [(ngModel)] = "userRegist.password" [ngModelOptions] = "{standalone: true }">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
           [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
     </div>
-    <div class="blank"></div>
+    <!-- <div class="blank"></div> -->
     <div class="submitCont">
-      <button mat-button>Register Submit</button>
+      <button (click)="sendRegis()" mat-button >Register Submit</button>
     </div>
   </div>
 </div>
-
+<div class="errorCage">
+  {{errorMsg}}
+</div>

@@ -1,7 +1,7 @@
 .registermain {
     display: flex;
     width: 100%;
-    height:75%;
+    height:60%;
     flex-direction: column;
     // justify-content: center;
     align-items: center;
@@ -12,19 +12,19 @@
     width: 20%;
     height: 100%;
     //background-color: rgb(24, 78, 136);
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(80, 80, 80);
     border-radius: 25px;
 }
 
 .blank {
-  height: 8%;
+  height: 4%;
   width: 100%;
 }
 
 .registerLogo {
   height: 15%;
   width: 100%;
-  color: black;
+  
   font-weight: bold;
   text-align: center;
   font-size: 24px;
@@ -35,12 +35,16 @@
   text-align: center;
 }
 
-.inputregister {
-  color: black;
-}
+
 
 .submitCont {
   height: 10%;
   text-align: center;
-  color: Black;
+  
+}
+.errorCage{
+  height: 200px;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
 }

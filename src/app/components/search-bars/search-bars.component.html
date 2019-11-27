@@ -1,19 +1,30 @@
-
   <div class="seekers">
-      <!-- <div class="genreseek">
-          <input type="text" class="find" name="" id="" placeholder="desplegable" (keyup)="searchMovieGenre($event)">
-      </div> -->
-      <mat-select [(value)]="selected">
-        <mat-option>None</mat-option>
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
-      </mat-select>
+      <div class="genreseek">
+        <!-- <mat-label>Select an option</mat-label> -->
+        <mat-select [(value)]="selected">
+          <mat-option (click)="searchMovieGenre()" value="Action">Action</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Adventure">Adventure</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Animation">Animation</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Comedy">Comedy</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Crime">Crime</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Documentary">Documentary</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Drama">Drama</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Family">Family</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Fantasy">Fantasy</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="History">History</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Horror">Horror</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Music">Music</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Mystery">Mystery</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Romance">Romance</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Science Fiction">Science Fiction</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Tv Movie">Tv Movie</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="Thriller">Thriller</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="War">War</mat-option>
+          <mat-option (click)="searchMovieGenre()" value="western">western</mat-option>
+        </mat-select>
+      </div>
       <div class="titleseek">
         <input type="text" class="find" name="" id="" placeholder="Title Search" 
         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Title Search'" (keyup)="searchMovie($event)">
-        
-       
       </div>
   </div>
-

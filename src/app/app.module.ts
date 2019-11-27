@@ -15,6 +15,7 @@ import { MovieGenreDisplayComponent } from './components/movie-genre-display/mov
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchBarsComponent } from './components/search-bars/search-bars.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     RegisterComponent,
     MovieGenreDisplayComponent,
     FooterComponent,
-    SearchBarsComponent
+    SearchBarsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

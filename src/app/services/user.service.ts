@@ -40,4 +40,10 @@ export class UserService {
     this.httpClient.get(`http://localhost:3000/user/logout/` + tokenLog.token).subscribe();
     return;
   }
+
+
+  regUser(regis_d:any):Observable<any>{
+    
+    return this.httpClient.post(`http://localhost:3000/user/register`, regis_d);
+  }
 }

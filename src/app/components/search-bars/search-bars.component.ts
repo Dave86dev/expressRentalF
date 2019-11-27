@@ -12,10 +12,12 @@ export class SearchBarsComponent implements OnInit {
   isSearchActive: boolean = false;
   films: Object;
   login_b: Object;
+  selected: any;
   constructor(private movieService:MovieService,
     private userService:UserService) { }
 
   ngOnInit() {
+      this.selected = 'Family';
   }
 
   searchMovie(event){
@@ -40,12 +42,12 @@ export class SearchBarsComponent implements OnInit {
 
   }
 
-  searchMovieGenre(event){
-    if(event.keyCode == 13){
-      
-      this.movieService.getGenreMovies(event.target.value)
+  searchMovieGenre(){
+    
+      console.log(this.selected);
+      this.movieService.getGenreMovies(this.selected)
       .subscribe(res=>this.movieService.setFilmsGenre(res));
-    }
+    
     
   }
 
