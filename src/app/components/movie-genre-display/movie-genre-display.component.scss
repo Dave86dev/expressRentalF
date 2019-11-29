@@ -16,8 +16,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //z-index: 100%;
+    transform: scale(1,1);
+    transition: 0.7s;
+    
   } 
+  
+  .card2:hover {
+    transform: scale(1, 1.1);
+    transition: 0.7s;
+  }
 }
 
 .scrolling-wrapper-flexbox2 {

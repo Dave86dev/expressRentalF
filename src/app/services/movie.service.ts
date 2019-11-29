@@ -11,6 +11,7 @@ export class MovieService {
   genre: string;
   films: object[];
   filmsGenre: object[];
+  filmChoosen: object[];
 
 
   constructor(private httpClient:HttpClient) { }
@@ -46,8 +47,12 @@ export class MovieService {
       return this.filmsGenre
    }
 
-   locateFilm(film_id:any):object{
-      console.log(film_id);
+   locateFilm(filmChoose:any):object{
+      
+
+      this.filmChoosen = filmChoose;
+      
+      
       return;
    }
 }

@@ -1,0 +1,87 @@
+<div class="filmmain">
+  <div class="filmmainChild">
+    <div class="blank"></div>
+    <div class="filmTitle">
+      {{dispChoosenFilm.title}}
+    </div>
+    <div class="filmOrigTitle">
+      {{dispChoosenFilm.original_title}}
+    </div>
+    <div class="filmInfo">
+      <div class="fInfoA">
+        <img width="300" height="432" src="https://image.tmdb.org/t/p/w200/{{dispChoosenFilm.poster_path}}"
+          alt="poster">
+      </div>
+      <div class="fInfoB">
+        <div class="fOverview">
+          <p>{{dispChoosenFilm.overview}}</p>
+        </div>
+        <div class="fGenre">
+          <p>{{dispChoosenFilmGenre}}</p>
+        </div>
+        <div class="fDateVote">
+          <div class="fDate">
+            <p>Release: </p>
+          </div>
+          <div class="fdis">
+            <p>{{dispChoosenFilm.release_date | date}}</p>
+          </div>
+          <div class="fVote">
+            <p>Avg. votes: </p>
+          </div>
+          <div class="fdis">
+            <p>{{dispChoosenFilm.vote_average}}</p>
+          </div>
+          <div class="fVote">
+            <p>Num. votes: </p>
+          </div>
+          <div class="fdis">
+            <p>{{dispChoosenFilm.vote_count}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--  -->
+<!-- 
+genre_ids
+:
+Array
+popularity
+:
+29.142
+vote_count
+:
+1344
+video
+:
+false
+poster_path
+:
+"/tNSpy125u15oQ9EOsDLzmMSvvub.jpg"
+id
+:
+456740
+
+backdrop_path
+:
+"/hMbP23EkGk6tjEjRZQXhnVAl5fW.jpg"
+original_language
+:
+"en"
+
+vote_average
+:
+5.1
+
+release_date
+:
+"2019-04-10"
+__v
+:
+0 -->

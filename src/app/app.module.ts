@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchBarsComponent } from './components/search-bars/search-bars.component';
 import {MatSelectModule} from '@angular/material/select';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FilmComponent } from './components/film/film.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     MovieGenreDisplayComponent,
     FooterComponent,
     SearchBarsComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilmComponent
   ],
   imports: [
     BrowserModule,

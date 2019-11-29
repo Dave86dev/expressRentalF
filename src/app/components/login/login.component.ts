@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
         
           this.errorMsg = "Welcombe back , " + dataLogin["name"];
-          console.log(dataLogin["token"]);
+          //console.log(dataLogin["token"]);
 
         setTimeout(() => {
           // this.userService.isLoginReg = false;

@@ -2,10 +2,12 @@
 <div class="title">Popular Films</div> 
     <div class="scrolling-wrapper-flexbox">
         <div class="card" *ngFor="let film of movieService.getFilms()">
-            <img class="posterclass" (click)="movieService.locateFilm(film.id)" 
-            width="200" height="288" 
-            src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
-            alt="poster">
+            <a routerLink="/film" routerLinkActive="active-link">
+                <img class="posterclass" (click)="movieService.locateFilm(film)" 
+                width="200" height="288" 
+                src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
+                alt="poster">
+            </a>
         </div>
     </div>
 <app-movie-genre-display></app-movie-genre-display>
