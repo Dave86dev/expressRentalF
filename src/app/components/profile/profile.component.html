@@ -1,73 +1,98 @@
-
 <div class="blankBig"></div>
 <div class="profilecont">
-    
-    <div class="userSide">
-        <div class="profilemain">
-            <div class="profilemainChild">
-              <div class="blank"></div>
-              <div class="profileLogo">
-                user profile
-              </div>
-                    <div class="basicCont">
-                        <div class="titCont">
-                            Username:
-                        </div>
-                        <div class="basicInp">
-                                <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.username}}">
-                        </div>
-                    </div>
-                    <div class="basicCont">
-                        <div class="titCont">
-                            E-mail address:
-                        </div>
-                        <div class="basicInp">
-                                <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.email}}">
-                        </div>
-                    </div>
-                    <div class="basicCont">
-                        <div class="titCont">
-                            Phone:
-                        </div>
-                        <div class="basicInp">
-                                <input type="text" class="find" name="" id="" placeholder="{{userProShow.phone}}">
-                        </div>
-                    </div>
-                    <div class="basicCont">
-                        <div class="titCont">
-                            Billcard Info:
-                        </div>
-                        <div class="basicInp">
-                                <input type="text" class="find" name="" id="" placeholder="{{userProShow.billcard}}">
-                        </div>
-                    </div>
-                    <div class="basicCont">
-                        <div class="titCont">
-                            Password:
-                        </div>
-                        <div class="basicInp">
-                                <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.password}}">
-                        </div>
-                    </div>
-              </div>
-            </div>
+
+  <div class="userSide">
+    <div class="profilemain">
+      <div class="profilemainChild">
+        <div class="blank"></div>
+        <div class="profileLogo">
+          user profile
+        </div>
+        <div class="basicCont">
+          <div class="titCont">
+            Username:
           </div>
-          <!-- <div class="errorCage">
+          <div class="basicInp">
+            <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.username}}">
+          </div>
+        </div>
+        <div class="basicCont">
+          <div class="titCont">
+            E-mail address:
+          </div>
+          <div class="basicInp">
+            <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.email}}">
+          </div>
+        </div>
+        <div class="basicCont">
+          <div class="titCont">
+            Phone:
+          </div>
+          <div class="basicInp">
+            <input type="text" class="find" name="" id="" placeholder="{{userProShow.phone}}">
+          </div>
+        </div>
+        <div class="basicCont">
+          <div class="titCont">
+            Billcard Info:
+          </div>
+          <div class="basicInp">
+            <input type="text" class="find" name="" id="" placeholder="{{userProShow.billcard}}">
+          </div>
+        </div>
+        <div class="basicCont">
+          <div class="titCont">
+            Password:
+          </div>
+          <div class="basicInp">
+            <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.password}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="errorCage">
             {{errorMsg}}
           </div> -->
-          
-    
-    <div class="ordersSide">
-        <div class="profilemain">
-            <div class="profilemainChild">
-              <div class="blank"></div>
-              <div class="profileLogo">
-                user order history
+
+
+  <div class="ordersSide">
+    <div class="profilemain">
+      <div class="profilemainChild">
+        <div class="blank"></div>
+        <div class="profileLogo">
+          user order history
+        </div>
+        <div *ngIf="userOrdShow.title; else elseBlock">
+          <div class="yesOrder">
+              <div class="orderRef">
+                <div class="textRef">Title</div>
+                <div class="textRef">Ordering Date</div>
+                <div class="textRef">Return Date</div>
+                <div class="textRef">Price</div>
               </div>
-              
-             
-              
-            </div>
+              <div class="orderData">
+                <div class="textData">{{userOrdShow.title}}</div>
+                <div class="textData">{{userOrdShow.orderdate}}</div>
+                <div class="textData">{{userOrdShow.returndate}}</div>
+                <div class="textData">{{userOrdShow.price}}</div>
+              </div>
           </div>
+      </div>
+            <ng-template #elseBlock>
+                <div class="noOrder"><img src="../../../assets/img/sad2.png"></div>
+                <div class="noOrder">Still no orders ...yet.</div>
+            </ng-template>
+        <!-- </div> -->
+        <!-- <div class="tableOrders">
+          <table>
+            <tr *ngFor="let order of userService.showOrdersUser()">
+              <td>{{userOrdShow.title}}</td>
+              <td></td>
+            </tr>
+          </table>
+        </div> -->
+      </div>
     </div>
+  </div>
 </div>

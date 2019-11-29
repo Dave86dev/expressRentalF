@@ -1,8 +1,9 @@
 
 <div class="title">Films by Genre</div>
-<div class="scrolling-wrapper-flexbox2"  >
+<div class="scrolling-wrapper-flexbox2">
     <div class="card2" *ngFor="let filmGenre of movieService.getFilmsGenre()">
-        <img width="200" height="288" src="https://image.tmdb.org/t/p/w200/{{filmGenre.poster_path}}" 
+       <img width="200" (click)="movieService.locateFilm(ilmGenre.id)" height="288" src="https://image.tmdb.org/t/p/w200/{{filmGenre.poster_path}}" 
         alt="poster">
     </div>
 </div>
+

@@ -60,4 +60,10 @@ export class UserService {
     }
     return false;
   }
+
+  showOrdersUser(user_mail:any):Observable<any>{
+    
+    return this.httpClient.get(`http://localhost:3000/order/show/` + user_mail);
+    
+  }
 }

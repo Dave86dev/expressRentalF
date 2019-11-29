@@ -45,4 +45,9 @@ export class MovieService {
    getFilmsGenre():object{
       return this.filmsGenre
    }
+
+   locateFilm(film_id:any):object{
+      console.log(film_id);
+      return;
+   }
 }

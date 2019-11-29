@@ -7,6 +7,7 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./movie-genre-display.component.scss']
 })
 export class MovieGenreDisplayComponent implements OnInit {
+  id : "holaaaa";
   constructor(private movieService:MovieService) { }
 
   ngOnInit() {

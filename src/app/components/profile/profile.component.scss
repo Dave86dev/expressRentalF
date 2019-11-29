@@ -8,13 +8,13 @@
 
 .userSide{
     position: relative;
-    width: 50%;
+    width: 30%;
     height: 100%;
 }
 
 .ordersSide{
     position: relative;
-    width: 50%;
+    width: 70%;
     height: 100%;
 }
 
@@ -93,9 +93,43 @@
   text-align: center;
 }
 
+.noOrder{
+  color: rgb(0, 168, 155); 
+  //margin-left: 220px;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+  
+}
+
 .errorCage{
   height: 200px;
   width: 100%;
   margin-top: 50px;
   text-align: center;
+}
+
+.yesOrder{
+  text-align: center;
+}
+
+.orderRef {
+  display: flex;
+}
+
+.textRef {
+  position: relative;
+  width: 25%;
+  color: rgb(0, 168, 155);
+}
+
+.orderData {
+  display: flex;
+  
+}
+
+.textData {
+  color: white;
+  position: relative;
+  width: 25%;
 }

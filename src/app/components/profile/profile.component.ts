@@ -11,7 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfileComponent implements OnInit {
   userProfile : any = {};
   userProShow: any = {};
+  userOrdShow: any = {};
+  userMail= "";
   errorMsg = "";
+  errorMsg2 = "";
 
   constructor(private movieService:MovieService,
     private userService:UserService) { }
@@ -30,7 +33,27 @@ export class ProfileComponent implements OnInit {
 
         if(res){
           this.userProShow = res;
+          this.userMail = this.userProShow.email;
           
+          //user order history implementation
+          this.userService.showOrdersUser(this.userMail)
+          .subscribe(
+      
+          (res) => { 
+
+           if(res){
+             this.userOrdShow = res;
+             
+           }else{
+         
+          this.errorMsg2 = res.message;
+          }
+          },
+           error=>console.log(error)
+
+          )
+
+
         }else{
           this.errorMsg = res.message;
         }
@@ -38,6 +61,8 @@ export class ProfileComponent implements OnInit {
       error=>console.log(error)
 
     )
+    
+    
   }
 
 }
