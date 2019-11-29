@@ -29,7 +29,7 @@
           <div class="fVote">
             <p>Avg. votes: </p>
           </div>
-          <div class="fdis">
+          <div class="fdis2">
             <p>{{dispChoosenFilm.vote_average}}</p>
           </div>
           <div class="fVote">
@@ -39,49 +39,40 @@
             <p>{{dispChoosenFilm.vote_count}}</p>
           </div>
         </div>
+        <div class="blank"></div>
+        <div class="submitAll">
+          <div class="submitOrderB">
+            <div class="submitCont">
+              <button class="subBot" (click)="rentIt()">
+                <p>Rent it!</p>
+              </button>
+            </div>
+          </div>
+          <div *ngIf="isRent" class="submitDays">
+              <div class="butDay">
+                <button class="subBotD1" (click)="rentItDays(dispChoosenFilm.id,3)">
+                  <p>3 Days</p>
+                </button>
+              </div>
+              <div class="butDay">
+                <button class="subBotD2" (click)="rentItDays(dispChoosenFilm.id,6)">
+                  <p>6 Days</p>
+                </button>
+              </div>
+              <div class="butDay">
+                <button class="subBotD3" (click)="rentItDays(dispChoosenFilm.id,15)">
+                  <p>15 Days</p>
+                </button>
+              </div>
+              <div class="butDay">
+                <button class="subBotD4" (click)="rentItDays(dispChoosenFilm.id,30)">
+                  <p>30 Days</p>
+                </button>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
 </div>
-
-
-
-<!--  -->
-<!-- 
-genre_ids
-:
-Array
-popularity
-:
-29.142
-vote_count
-:
-1344
-video
-:
-false
-poster_path
-:
-"/tNSpy125u15oQ9EOsDLzmMSvvub.jpg"
-id
-:
-456740
-
-backdrop_path
-:
-"/hMbP23EkGk6tjEjRZQXhnVAl5fW.jpg"
-original_language
-:
-"en"
-
-vote_average
-:
-5.1
-
-release_date
-:
-"2019-04-10"
-__v
-:
-0 -->

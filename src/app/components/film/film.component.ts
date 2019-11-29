@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 import { UserService } from 'src/app/services/user.service';
 import { ActivatedRoute } from '@angular/router';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-film',
@@ -11,7 +12,17 @@ import { ActivatedRoute } from '@angular/router';
 export class FilmComponent implements OnInit {
   dispChoosenFilm : any = {};
   dispChoosenFilmGenre: string = "";
-  constructor(private movieService:MovieService) { }
+  isRent: boolean = false;
+  placeOrder = {
+    token: '',
+    userid: '',
+    idfilm: '',
+    price: 0,
+    days: 0
+  };
+
+  constructor(private movieService:MovieService, private orderService:OrderService) { }
+
 
   ngOnInit() {
 
@@ -53,6 +64,52 @@ export class FilmComponent implements OnInit {
 
     res = allgenres[genreId];
     return res;
+  }
+
+  rentIt(){
+    
+    this.isRent = true;
+    return this.isRent;
+  }
+
+  rentItDays(cFilmId,daysR){
+    this.placeOrder.idfilm = cFilmId;
+    this.placeOrder.days = daysR;
+
+    var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
+    
+    this.placeOrder.token = dataLogin["token"];
+    this.placeOrder.userid = dataLogin["userid"];
+
+    this.orderService.newOrder(this.placeOrder)
+    .subscribe(
+      
+      (res) => { 
+        console.log(res);
+        // if(res.name){
+        //   localStorage.setItem("datosLogin", JSON.stringify(res));
+
+        //   var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
+        
+        //   this.errorMsg = "Welcombe back , " + dataLogin["name"];
+        //   //console.log(dataLogin["token"]);
+
+        // setTimeout(() => {
+        //   // this.userService.isLoginReg = false;
+        //   // this.userService.isProfOut = true;
+        //   this.userService.loginDone();
+          
+        //   this.router.navigate(['/display'])
+        // }, 2500);
+        // }else{
+        //   this.errorMsg = res.message;
+        // }
+      },
+      error=>console.log(error)
+
+    )
+      
+    return;
   }
 
 }
