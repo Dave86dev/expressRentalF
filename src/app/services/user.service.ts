@@ -10,18 +10,15 @@ export class UserService {
 
   isLoginReg : boolean = true;
   isProfOut: boolean = false;
+  nameP: string = '';
 
-  //tokenLog = JSON.parse(localStorage.getItem("datosLogin"));
-   
   constructor(private httpClient:HttpClient) { }
 
   sendCertainUser(login_b:any):Observable<any>{
-    //console.log("ye aqui seguimos eh");
-    console.log(login_b);
+    
+    
     return this.httpClient.post(`http://localhost:3000/user/showme`, login_b); //{responseType: 'text'}) esto en caso de que 
   }                                                                            //los res send devuelvan texto y no json
-
-
 
   loginUser(login_b:any):Observable<any>{
     
@@ -32,9 +29,6 @@ export class UserService {
   logoutUser():Observable<any>{
     
     let tokenLog = JSON.parse(localStorage.getItem("datosLogin"));
-    
-
-    this.isLoginReg = true;
     this.isProfOut = false;
     
     this.httpClient.get(`http://localhost:3000/user/logout/` + tokenLog.token).subscribe();
@@ -44,7 +38,7 @@ export class UserService {
     return;
   }
 
- regUser(regis_d:any):Observable<any>{
+  regUser(regis_d:any):Observable<any>{
     
     return this.httpClient.post(`http://localhost:3000/user/register`, regis_d);
   }

@@ -20,7 +20,7 @@
       </div>
       <div class="proflogout" *ngIf="userService.loginDone()">
         <div class="loginclass"><a routerLink="/profile" routerLinkActive="active-link">
-            profile
+            {{userService.nameP}}
           </a>
         </div>
         <div class="registerclass"><a routerLink="/display" routerLinkActive="active-link" (click)="userService.logoutUser()">

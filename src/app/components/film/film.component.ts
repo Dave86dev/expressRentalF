@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 import { UserService } from 'src/app/services/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class FilmComponent implements OnInit {
   dispChoosenFilm : any = {};
   dispChoosenFilmGenre: string = "";
   isRent: boolean = false;
+  isLog: boolean = false;
   placeOrder = {
     token: '',
     userid: '',
@@ -20,12 +21,16 @@ export class FilmComponent implements OnInit {
     price: 0,
     days: 0
   };
+  errorMsg: any = '';
 
-  constructor(private movieService:MovieService, private orderService:OrderService) { }
+  constructor(private movieService:MovieService, private orderService:OrderService, 
+    private router:Router, private userService:UserService) { }
 
 
   ngOnInit() {
 
+    //we check if the user is logged in and then we enable the rent it button.
+    this.isLog = this.userService.isProfOut;
     this.dispChoosenFilm = this.movieService.filmChoosen;
     
     for(let _i = 0; _i<this.dispChoosenFilm.genre_ids.length; _i++){
@@ -85,25 +90,21 @@ export class FilmComponent implements OnInit {
     .subscribe(
       
       (res) => { 
-        console.log(res);
-        // if(res.name){
-        //   localStorage.setItem("datosLogin", JSON.stringify(res));
-
-        //   var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
         
-        //   this.errorMsg = "Welcombe back , " + dataLogin["name"];
-        //   //console.log(dataLogin["token"]);
-
-        // setTimeout(() => {
-        //   // this.userService.isLoginReg = false;
-        //   // this.userService.isProfOut = true;
-        //   this.userService.loginDone();
+        if(res.orderdate){
+         
+        
+        this.errorMsg = dataLogin["name"] + ", thanks for your order, heat the popcorn...your film is coming!";
           
-        //   this.router.navigate(['/display'])
-        // }, 2500);
-        // }else{
-        //   this.errorMsg = res.message;
-        // }
+
+        setTimeout(() => {
+          
+          
+          this.router.navigate(['/profile'])
+        }, 2000);
+        }else{
+          this.errorMsg = res.message;
+        }
       },
       error=>console.log(error)
 

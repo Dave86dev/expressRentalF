@@ -41,9 +41,9 @@
         </div>
         <div class="blank"></div>
         <div class="submitAll">
-          <div class="submitOrderB">
-            <div class="submitCont">
-              <button class="subBot" (click)="rentIt()">
+          <div  class="submitOrderB">
+            <div *ngIf="isLog"  class="submitCont">
+              <button  class="subBot" (click)="rentIt()">
                 <p>Rent it!</p>
               </button>
             </div>
@@ -75,4 +75,7 @@
     </div>
   </div>
 
+</div>
+<div class="msg">
+  <p>{{errorMsg}}</p>
 </div>
