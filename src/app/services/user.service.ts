@@ -60,4 +60,9 @@ export class UserService {
     return this.httpClient.get(`http://localhost:3000/order/show/` + user_mail);
     
   }
+
+  updateUserdata(user_mod:any):Observable<any>{
+    
+    return this.httpClient.post(`http://localhost:3000/user/modify`, user_mod);
+  }
 }

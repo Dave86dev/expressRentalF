@@ -29,7 +29,7 @@
             Phone:
           </div>
           <div class="basicInp">
-            <input type="text" class="find" name="" id="" placeholder="{{userProShow.phone}}">
+            <input type="text" opacity="0.6" class="find" name="" id="phoneInput" placeholder="{{userProShow.phone}}">
           </div>
         </div>
         <div class="basicCont">
@@ -37,7 +37,7 @@
             Billcard Info:
           </div>
           <div class="basicInp">
-            <input type="text" class="find" name="" id="" placeholder="{{userProShow.billcard}}">
+            <input type="text" class="find" name="" id="billcardInput" placeholder="{{userProShow.billcard}}">
           </div>
         </div>
         <div class="basicCont">
@@ -48,11 +48,16 @@
             <input type="text" class="find" name="" id="" disabled placeholder="{{userProShow.password}}">
           </div>
         </div>
+        <div class="basicCont">
+          <div class="butCont">
+            <button (click)="updateUser(userProShow._id)" class="butUpd">UPDATE</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <!-- <div class="errorCage">
-            {{errorMsg}}
+            {{errorMsg3}}
           </div> -->
 
 

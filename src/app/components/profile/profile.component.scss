@@ -21,7 +21,7 @@
 .profilemain {
     display: flex;
     width: 100%;
-    height:60%;
+    height:70%;
     flex-direction: column;
     // justify-content: center;
     align-items: center;
@@ -60,7 +60,7 @@
 }
 
 .basicCont{
-  height: 16%;
+  height: 14%;
   display: flex;
   align-items: center;
 }
@@ -132,4 +132,28 @@
   color: white;
   position: relative;
   width: 25%;
+}
+
+.butCont {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.butUpd {
+  all: unset;
+  text-align: center;
+  width: 90px;
+  font-size: 12px;
+  height: 25px;
+  background-color: rgb(0, 168, 155);
+  color: white;
+  opacity: 0.7;
+  transition: 0.3s;
+  border: 0;
+  border-radius: 5px;
+}
+
+.butUpd:hover{
+  opacity: 1;
 }
