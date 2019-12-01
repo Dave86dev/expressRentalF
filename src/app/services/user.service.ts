@@ -25,6 +25,11 @@ export class UserService {
     return this.httpClient.post(`http://localhost:3000/user/login`, login_b); 
 
   }
+
+  loginAdmin(login_a:any):Observable<any>{
+    
+    return this.httpClient.post(`http://localhost:3000/order/show`, login_a);
+  }
   
   logoutUser():Observable<any>{
     

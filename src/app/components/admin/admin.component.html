@@ -1,0 +1,47 @@
+
+<div class="adminmain">
+    <div *ngIf="isAdmin" class="adminmainChild">
+      <div class="blank"></div>
+      <div class="adminLogo">
+          admin login
+      </div>
+      <div class="blank"></div>
+      
+      <div class="emaildiv">
+          <mat-form-field>
+              <input class="inputadmin" matInput placeholder="e-mail address"
+              [(ngModel)] = "useradmin.email" [ngModelOptions] = "{standalone: true }">
+          </mat-form-field>
+      </div>
+      <div class="blank"></div>
+      
+      <div class="passdiv">
+          <mat-form-field>
+              <input class="inputadmin" matInput placeholder="password" [type]="hide ? 'password' : 'text'" 
+              [(ngModel)] = "useradmin.password" [ngModelOptions] = "{standalone: true }">
+  
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+      </div>
+      <div class="blank"></div>
+      <div class="submitCont">
+          <button (click)="sendAdmin()" mat-button>AdminSign</button>
+      </div>
+    </div>
+    
+    <!-- ORDERS CONTAINER INFO -->
+
+    <div *ngIf="isAdminOrders" class="ordersCont">
+      <div class="blankbig"></div>
+      <div *ngFor="let order of adminResults" class="ordersDisp">
+        <div class="orderDesign">Id User: {{order.userid}} Id Film : {{order.idfilm}} Ordering date: {{order.orderdate | json}} 
+          Expected Return: {{order.returndate | json}} User days choice: {{order.days | json}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="errorCage">
+    {{errorMsg}}
+  </div>

@@ -17,6 +17,7 @@ import { SearchBarsComponent } from './components/search-bars/search-bars.compon
 import {MatSelectModule} from '@angular/material/select';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FilmComponent } from './components/film/film.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FilmComponent } from './components/film/film.component';
     FooterComponent,
     SearchBarsComponent,
     ProfileComponent,
-    FilmComponent
+    FilmComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

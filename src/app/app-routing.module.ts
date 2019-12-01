@@ -6,6 +6,7 @@ import { MovieDisplayComponent } from './components/movie-display/movie-display.
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FilmComponent } from './components/film/film.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   {path:"", redirectTo: "display", pathMatch:"full"},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"register", component:RegisterComponent},
   {path:"movie:/id", component:MovieDetailComponent},
   {path:"profile", component:ProfileComponent},
-  {path:"film", component: FilmComponent}
+  {path:"film", component: FilmComponent},
+  {path:"admin", component: AdminComponent}
 ];
 
 @NgModule({
