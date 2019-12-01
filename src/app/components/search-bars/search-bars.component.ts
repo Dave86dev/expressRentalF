@@ -17,12 +17,14 @@ export class SearchBarsComponent implements OnInit {
     private userService:UserService) { }
 
   ngOnInit() {
+      //we have Family since the beginning as pre-selected movie Genre for the checklist.
       this.selected = 'Family';
   }
 
   searchMovie(event){
 
     if(event.target.value.length == 0 && this.isSearchActive){
+      //if the value for the title search input is 0, we keep back to the default results.
       this.movieService.getDisplayMovies()
       .subscribe(
       
@@ -33,18 +35,20 @@ export class SearchBarsComponent implements OnInit {
     }
     
     if(event.target.value.length >= 3){
+      //if the value for the title search is at least 3, we start displaying the results for
+      //a better dynamic showcase.
       this.isSearchActive = true;
       this.movieService.getTitleMovies(event.target.value)
       .subscribe(res=>this.movieService.setFilms(res))
     }
-
-
 
   }
 
   searchMovieGenre(){
     
       //console.log(this.selected);
+      //we proceed to do the search of movies by genre, passing the argument this.selected
+      //which contains the value to search
       this.movieService.getGenreMovies(this.selected)
       .subscribe(res=>this.movieService.setFilmsGenre(res));
     

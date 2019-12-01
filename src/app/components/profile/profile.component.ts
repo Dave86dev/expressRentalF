@@ -24,9 +24,10 @@ export class ProfileComponent implements OnInit {
     private userService:UserService, private router:Router) { }
 
   ngOnInit() {
+    //we recollect the needed data...
 
     var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
-
+    //token and name from localStorage
     this.userProfile.token = dataLogin["token"];
     this.userProfile.name = dataLogin["name"];
 
@@ -46,6 +47,7 @@ export class ProfileComponent implements OnInit {
           (res) => { 
 
            if(res){
+             //if there are results, we show the orders from the user. 
              this.userOrdShow = res;
              
            }else{
@@ -54,10 +56,7 @@ export class ProfileComponent implements OnInit {
           }
           },
            error=>console.log(error)
-
           )
-
-
         }else{
           this.errorMsg = res.message;
         }
@@ -66,43 +65,45 @@ export class ProfileComponent implements OnInit {
 
     )
     
-    
   }
 
   updateUser(idus){
+
+  //IMPORTANT
+  //we get the value of the inputs phone and billcard for supposed updates on the database.  
     
   let newPhone = (<HTMLInputElement>document.getElementById('phoneInput')).value;
   let newBillcard = (<HTMLInputElement>document.getElementById('billcardInput')).value;
 
-  if (!newPhone){
-    newPhone = (<HTMLInputElement>document.getElementById('phoneInput')).placeholder;
-  }
+  //in case there is no update on phone, we get the placeholder value
+    if (!newPhone){
+      newPhone = (<HTMLInputElement>document.getElementById('phoneInput')).placeholder;
+    }
 
-  if (!newBillcard){
-    newBillcard = (<HTMLInputElement>document.getElementById('billcardInput')).placeholder;
-  }
+  //in case there is no update on billcard, we get the placeholder value
+    if (!newBillcard){
+      newBillcard = (<HTMLInputElement>document.getElementById('billcardInput')).placeholder;
+    }
+  //object with the user id... phone and billcard values... ready to update.
+    this.userUpdProf.id = idus;
+    this.userUpdProf.phone = newPhone;
+    this.userUpdProf.billcard = newBillcard;
 
-  this.userUpdProf.id = idus;
-  this.userUpdProf.phone = newPhone;
-  this.userUpdProf.billcard = newBillcard;
+    this.userService.updateUserdata(this.userUpdProf)
+    .subscribe(
 
-  this.userService.updateUserdata(this.userUpdProf)
-  .subscribe(
-      
-    (res) => { 
+      (res) => { 
+        //once update function has done the job, we set a delay of 1250 msc and we go back to the display page.
+        this.errorMsg3 = res;
+        setTimeout(() => {
 
-      this.errorMsg3 = res;
-      setTimeout(() => {
-        
-        
-        this.router.navigate(['/display'])
-      }, 1250);
-    },
-    error=>console.log(error)
+          this.router.navigate(['/display'])
+        }, 1250);
+      },
+      error=>console.log(error)
 
-  )
-
-  return;
+    )
+    return;
   }
 
 }

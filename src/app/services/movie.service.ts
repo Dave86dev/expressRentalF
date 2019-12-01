@@ -29,29 +29,38 @@ export class MovieService {
    }
    
    getGenreMovies(genre:string):Observable<any>{
+      
       return this.httpClient.get(this.url + `genre/` + genre);
+
    }
 
    setFilms(films:object[]):void{
+      
       this.films=films
+
    }
+   
    getFilms():object{
+      
       return this.films
+
    }
 
    setFilmsGenre(filmsGenre:object[]):void{
+      
       this.filmsGenre=filmsGenre
+
    }
 
    getFilmsGenre():object{
+      
       return this.filmsGenre
+
    }
 
    locateFilm(filmChoose:any):object{
       
-
       this.filmChoosen = filmChoose;
-      
       
       return;
    }

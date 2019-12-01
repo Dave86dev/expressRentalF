@@ -4,8 +4,6 @@
     <div class="registerLogo">
       user register
     </div>
-    <!-- <div class="blank"></div> -->
-
     <div class="regdiv">
       <mat-form-field>
         <input class="inputregister" matInput placeholder="username"
@@ -30,8 +28,6 @@
         [(ngModel)] = "userRegist.billcard" [ngModelOptions] = "{standalone: true }">
       </mat-form-field>
     </div>
-    <!-- <div class="blank"></div> -->
-
     <div class="regdiv">
       <mat-form-field>
         <input class="inputregister" matInput placeholder="password" [type]="hide ? 'password' : 'text'"
@@ -42,7 +38,6 @@
         </button>
       </mat-form-field>
     </div>
-    <!-- <div class="blank"></div> -->
     <div class="submitCont">
       <button (click)="sendRegis()" mat-button >Register Submit</button>
     </div>

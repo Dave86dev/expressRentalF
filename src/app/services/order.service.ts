@@ -11,7 +11,9 @@ export class OrderService {
   constructor(private httpClient:HttpClient) { }
 
   newOrder(placeOrder:any):Observable<any>{
+
     return this.httpClient.post(`http://localhost:3000/order`, placeOrder);
+    
   }
 
 // setOrder(orders:object[]):void{

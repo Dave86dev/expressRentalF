@@ -1,19 +1,17 @@
 .registermain {
-    display: flex;
-    width: 100%;
-    height:60%;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  width: 100%;
+  height:60%;
+  flex-direction: column;
+  align-items: center;
+}
   
 .registermainChild {
-    position: relative;
-    width: 20%;
-    height: 100%;
-    //background-color: rgb(24, 78, 136);
-    background-color: rgb(80, 80, 80);
-    border-radius: 25px;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(80, 80, 80);
+  border-radius: 25px;
 }
 
 .blank {
@@ -24,7 +22,6 @@
 .registerLogo {
   height: 15%;
   width: 100%;
-  
   font-weight: bold;
   text-align: center;
   font-size: 24px;
@@ -34,8 +31,6 @@
   width: 100%;
   text-align: center;
 }
-
-
 
 .submitCont {
   height: 10%;

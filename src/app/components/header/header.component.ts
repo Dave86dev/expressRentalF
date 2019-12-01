@@ -9,14 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // profileName: string = '';
   
   constructor(public userService: UserService) { }
  
-
   ngOnInit() {
-    // this.profileName = this.userService.nameP;
-
   }
 
 }

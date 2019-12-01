@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { MovieDisplayComponent } from './components/movie-display/movie-display.component';
-import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { AdminComponent } from './components/admin/admin.component';
     HeaderComponent,
     LoginComponent,
     MovieDisplayComponent,
-    MovieDetailComponent,
     RegisterComponent,
     MovieGenreDisplayComponent,
     FooterComponent,

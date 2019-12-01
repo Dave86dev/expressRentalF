@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit {
   };
   errorMsg = "";
 
-
   constructor(private userService: UserService, private router:Router) { }
 
   ngOnInit() {
@@ -35,9 +34,9 @@ export class RegisterComponent implements OnInit {
           
           this.errorMsg = "Bienvenido a expRental , " + res.name + ", acabas de registrarte.";
           setTimeout(() => {
-          
+            //once register process is done, we wait with a delay and we go back to the display page.
             this.router.navigate(['/display'])
-          }, 2750);
+          }, 2500);
         }else{
           this.errorMsg = res.message;
         }

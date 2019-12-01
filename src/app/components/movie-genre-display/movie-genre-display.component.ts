@@ -7,13 +7,14 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./movie-genre-display.component.scss']
 })
 export class MovieGenreDisplayComponent implements OnInit {
-  id : "holaaaa";
+  id : "";
   constructor(private movieService:MovieService) { }
 
   ngOnInit() {
-
+    //same comments as on movie-display 
     var item = document.querySelector('.scrolling-wrapper-flexbox2');
-
+    
+    //we start the mouse wheel identification movement and reference it for scroll
     window.addEventListener('wheel', function(e) {
 
     
@@ -21,7 +22,7 @@ export class MovieGenreDisplayComponent implements OnInit {
       else item.scrollLeft -= 100;
     });
 
-
+    //we call the function in the movie service with the selected genre as argument
     this.movieService.getGenreMovies('science fiction')
     .subscribe(res=>this.movieService.setFilmsGenre(res));
   }

@@ -2,23 +2,18 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-
-  
   flex-direction: row;
   align-items: flex-start;
-  
   width: auto;
 
   .card {
     flex: 0 0 auto;
-    //pointer-events: none;
     margin: 0.3em;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: scale(1,1);
     transition: 0.5s;
-    
   } 
   
   .card:hover {
@@ -27,56 +22,52 @@
   }
 }
 
-  .scrolling-wrapper-flexbox {
-    &::-webkit-scrollbar {
-      display: none;
-    }
+.scrolling-wrapper-flexbox {
+  &::-webkit-scrollbar {
+    display: none;
   }
+}
 
-  .title{
-    width: 100%;
-    margin-top:18px;
-    color: rgb(0, 168, 155);
-    font-style: italic;
-    font-size: 18px;
+.title{
+  width: 100%;
+  margin-top:18px;
+  color: rgb(0, 168, 155);
+  font-style: italic;
+  font-size: 18px;
 }
 
 .seekers{
-    height: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .genreseek{
-    margin-right: 25px;
+  margin-right: 25px;
 }
 
 .titleseek{ 
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 ::placeholder {
-    color: white;
-    font-style: italic;
+  color: white;
+  font-style: italic;
 }
 
 a:hover{
-opacity: 1;
+  opacity: 1;
 }
 
 .find{
-    all:unset;
-    border: 2px solid rgb(0, 168, 155);
-    color: white;
-    opacity: 0.6;
-    transition: 0.3s;
+  all:unset;
+  border: 2px solid rgb(0, 168, 155);
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
 .find:focus{
-    opacity: 1;
+  opacity: 1;
 }
-
-
-
-

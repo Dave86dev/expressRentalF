@@ -21,18 +21,16 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-
   sendAdmin(){
     this.userService.loginAdmin(this.useradmin)
     .subscribe(
       
       (res) => { 
         if(res[0]){
-          //Admin login correcto, el resultado devuelto es un array de objetos.
+          //Admin login working, results come back in an array of objects
           this.isAdmin = false;
           this.isAdminOrders = true;
 
-          
           for (let _i = 0; _i < res.length; _i++){
             this.adminResults[_i] = (res[_i]);
           }

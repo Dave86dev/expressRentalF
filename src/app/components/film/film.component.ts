@@ -44,7 +44,7 @@ export class FilmComponent implements OnInit {
   genreTranslator(genreId){
     let res = "";
 
-    //translator object
+    //translator object for the distinct genre display on the film detail page
     let allgenres = {
       28 : "action",
       12 : "adventure",
@@ -65,41 +65,48 @@ export class FilmComponent implements OnInit {
       53 : "thriller",
       10752 : "war",
       37 : "western"
-  }
+    }
 
+    //we translate the genre by passing the id number to the object genre
     res = allgenres[genreId];
     return res;
   }
 
   rentIt(){
     
+    //boolean value to check if the rent button has been clicked, then we show the various days options.
     this.isRent = true;
     return this.isRent;
   }
 
   rentItDays(cFilmId,daysR){
-    this.placeOrder.idfilm = cFilmId;
+    //rent function with user choice days specified
+    
+    //id of film
+    this.placeOrder.idfilm = cFilmId; 
+    //number of days
     this.placeOrder.days = daysR;
 
     var dataLogin = JSON.parse(localStorage.getItem("datosLogin"));
-    
+    //token
     this.placeOrder.token = dataLogin["token"];
+    //userid
     this.placeOrder.userid = dataLogin["userid"];
 
+    //we proceed to use the function on the order service and rent the film
     this.orderService.newOrder(this.placeOrder)
     .subscribe(
       
       (res) => { 
         
         if(res.orderdate){
-         
-        
-        this.errorMsg = dataLogin["name"] + ", thanks for your order, heat the popcorn...your film is coming!";
-          
 
+        //we briefly announce the user that the order has been made. 
+        this.errorMsg = dataLogin["name"] + ", thanks for your order, heat the popcorn...your film is coming!";
+        
         setTimeout(() => {
           
-          
+          //a little delay and we go directly to the user profile where the order is going to be displayed.
           this.router.navigate(['/profile'])
         }, 2000);
         }else{
@@ -107,9 +114,7 @@ export class FilmComponent implements OnInit {
         }
       },
       error=>console.log(error)
-
     )
-      
     return;
   }
 
