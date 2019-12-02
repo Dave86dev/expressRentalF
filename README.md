@@ -1,4 +1,4 @@
-#MOVIE RENTAL APP FRONTEND
+# MOVIE RENTAL APP FRONTEND
 
 Frontend, allows dynamic display and rental of titles. 
 
@@ -8,7 +8,7 @@ Search your favourite movie either by title or genre.
 
 Movie database contais 10.000 titles.
 
-#Usage:
+# Usage:
 
 >Scroll the movies simply by using your mouse wheel.
 
@@ -20,7 +20,7 @@ Movie database contais 10.000 titles.
 
 >Feel free to update your user data such as Phone or Billcard in the Profile section.
 
-#Important info:
+# Important info:
 
 > Admin access. Proceed to the url --> http://localhost:4200/admin
 
@@ -32,7 +32,7 @@ Movie database contais 10.000 titles.
 
 > mongoDB powered.
 
-#Credit
+# Credit
 
 Developed by David Ochando Blasco for purely educational purposes.
 
