@@ -1,3 +1,13 @@
+# RENTAL EXPRESS
+
+>What is Rental Express?
+
+It's an application coded in Angular/Express technologies using MongoDB as database engine.
+
+Displays an interface capable of simulating a public video rental app.
+
+-Coding for this app lasted around 60 hours.-
+
 # MOVIE RENTAL APP FRONTEND
 
 Frontend, allows dynamic display and rental of titles. 
