@@ -14,6 +14,8 @@ Displays an interface capable of simulating a public video rental app.
 
 ![](https://i.gyazo.com/4edda9cdbb82492eca4b85541382214f.png)
 
+![](https://i.gyazo.com/fd4d5cdf473d1fa6fed287be919ed139.png)
+
 # MOVIE RENTAL APP FRONTEND
 
 Frontend, allows dynamic display and rental of titles. 
