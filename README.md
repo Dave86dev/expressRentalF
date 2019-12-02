@@ -8,6 +8,8 @@ Displays an interface capable of simulating a public video rental app.
 
 -Coding for this app lasted around 60 hours.-
 
+![](https://i.gyazo.com/69781a16eefec81ce6ab3e7fe9950397.jpg)
+
 # MOVIE RENTAL APP FRONTEND
 
 Frontend, allows dynamic display and rental of titles. 
